@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=TX_arduino Pin=R21-2
+Added Pin To Net: NetName=Net*_0 Pin=R21-2
+Added Net: Name=Net*_0
+Added Room: Name=Sheet2

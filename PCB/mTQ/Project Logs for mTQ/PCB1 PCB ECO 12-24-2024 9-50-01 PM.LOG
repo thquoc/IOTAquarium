@@ -1,0 +1,3 @@
+Added Pin To Net: NetName=NetD1_1 Pin=RL1-4
+Added Member To Class: ClassName=Sheet1 Member=Component U1 ESP32-DEVKIT-V1
+Added Room: Name=Sheet1

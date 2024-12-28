@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=buzzer Pin=U7-10
+Removed Pin From Net: NetName=pH4502C-Analog Pin=U7-19
+Removed Pin From Net: NetName=Turbidity Analog Pin=U7-20
+Removed Pin From Net: NetName=Ao_arduino Pin=U7-21
+Added Pin To Net: NetName=Ao_arduino Pin=U7-19
+Added Pin To Net: NetName=buzzer Pin=U7-20
+Added Pin To Net: NetName=pH4502C-Analog Pin=U7-25
+Added Pin To Net: NetName=Turbidity Analog Pin=U7-26
+Added Room: Name=Sheet2

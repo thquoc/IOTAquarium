@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "28119327911",
+    "firebase_url": "https://dacn2-41607-default-rtdb.firebaseio.com",
+    "project_id": "dacn2-41607",
+    "storage_bucket": "dacn2-41607.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28119327911:android:7ff892ba0de12f73f66782",
+        "android_client_info": {
+          "package_name": "com.example.untitled2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIc-s2HwIkZYw82AboCgcXT3VHoYNLRjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

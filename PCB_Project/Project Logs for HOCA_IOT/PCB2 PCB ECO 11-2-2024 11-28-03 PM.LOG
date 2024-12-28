@@ -1,0 +1,116 @@
+Removed Pin From Net: NetName=RX_arduino Pin=Arduino Mega-19
+Removed Pin From Net: NetName=R_oxi Pin=Arduino Mega-23
+Removed Pin From Net: NetName=R_doduc Pin=Arduino Mega-25
+Removed Pin From Net: NetName=R_pH Pin=Arduino Mega-27
+Removed Pin From Net: NetName=R_temp Pin=Arduino Mega-29
+Removed Pin From Net: NetName=R_levelwater Pin=Arduino Mega-31
+Removed Pin From Net: NetName=buzzer Pin=Arduino Mega-34
+Removed Pin From Net: NetName=SR04-Digit1 Pin=Arduino Mega-45
+Removed Pin From Net: NetName=SR04-Digit2 Pin=Arduino Mega-47
+Removed Pin From Net: NetName=DS18B20_digital Pin=Arduino Mega-49
+Removed Pin From Net: NetName=VCC Pin=Arduino Mega-59
+Removed Pin From Net: NetName=Turbidity Analog Pin=Arduino Mega-74
+Removed Pin From Net: NetName=pH4502C-Analog Pin=Arduino Mega-75
+Removed Pin From Net: NetName=GND Pin=Arduino Mega-76
+Removed Pin From Net: NetName=GND Pin=Arduino Mega-78
+Removed Pin From Net: NetName=GND Pin=Arduino Mega-79
+Removed Pin From Net: NetName=GND Pin=Cx2-2
+Removed Pin From Net: NetName=GND Pin=Cx3-2
+Removed Pin From Net: NetName=GND Pin=Cx6-2
+Removed Pin From Net: NetName=GND Pin=Cx7-2
+Removed Pin From Net: NetName=GND Pin=Cx8-2
+Removed Pin From Net: NetName=GND Pin=Cx9-2
+Removed Pin From Net: NetName=GND Pin=LS1-M
+Removed Pin From Net: NetName=5V Pin=R2-1
+Removed Pin From Net: NetName=5V Pin=R3-1
+Removed Pin From Net: NetName=5V Pin=R4-1
+Removed Pin From Net: NetName=5V Pin=R8-1
+Removed Pin From Net: NetName=5V Pin=R9-1
+Removed Pin From Net: NetName=buzzer Pin=R12-1
+Removed Pin From Net: NetName=5V Pin=R15-1
+Removed Pin From Net: NetName=5V Pin=R16-1
+Removed Pin From Net: NetName=TX_arduino Pin=R21-2
+Removed Member From Class: ClassName=Sheet2 Member=Arduino Mega
+Removed Member From Class: ClassName=Sheet2 Member=Cx2
+Removed Member From Class: ClassName=Sheet2 Member=Cx3
+Removed Member From Class: ClassName=Sheet2 Member=Cx6
+Removed Member From Class: ClassName=Sheet2 Member=Cx7
+Removed Member From Class: ClassName=Sheet2 Member=Cx8
+Removed Member From Class: ClassName=Sheet2 Member=Cx9
+Change Component Comment : Designator=R2 Old Comment=1k New Comment=2k
+Change Component Comment : Designator=R12 Old Comment=100R New Comment=180R
+Added Component: Designator=D7(D1A)
+Add component (AddParameter): Name = "Value"; Value = "1N4007"; VariantName = "[No Variations]"
+Added Component: Designator=Q6(QTO-92)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=U7(MODULE_ARDUINO_NANO_A000005)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ARDUINO%20NANO%20A000005/Arduino/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Arduino"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ARDUINO NANO A000005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Non-Standard Arduino"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ARDUINO%20NANO%20A000005/Arduino/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V Pin=D7-2
+Added Pin To Net: NetName=5V Pin=LS1-P
+Added Pin To Net: NetName=GND Pin=Q6-1
+Added Pin To Net: NetName=5V Pin=R2-2
+Added Pin To Net: NetName=buzzer Pin=R12-2
+Added Pin To Net: NetName=TX_arduino Pin=R21-1
+Added Pin To Net: NetName=RX_arduino Pin=U7-2
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Pin To Net: NetName=R_oxi Pin=U7-5
+Added Pin To Net: NetName=R_doduc Pin=U7-6
+Added Pin To Net: NetName=R_pH Pin=U7-7
+Added Pin To Net: NetName=R_temp Pin=U7-8
+Added Pin To Net: NetName=R_levelwater Pin=U7-9
+Added Pin To Net: NetName=buzzer Pin=U7-10
+Added Pin To Net: NetName=SR04-Digit1 Pin=U7-13
+Added Pin To Net: NetName=SR04-Digit2 Pin=U7-14
+Added Pin To Net: NetName=DS18B20_digital Pin=U7-15
+Added Pin To Net: NetName=pH4502C-Analog Pin=U7-25
+Added Pin To Net: NetName=Turbidity Analog Pin=U7-26
+Added Pin To Net: NetName=GND Pin=U7-29
+Added Pin To Net: NetName=VCC Pin=U7-30
+Added Pin To Net: NetName=Ao_arduino Pin=Cx1-1
+Added Pin To Net: NetName=Ao_arduino Pin=R2-1
+Added Pin To Net: NetName=Ao_arduino Pin=R3-2
+Added Pin To Net: NetName=Ao_arduino Pin=SW1-2
+Added Pin To Net: NetName=Ao_arduino Pin=U7-19
+Added Net: Name=Ao_arduino
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=LS1-M
+Added Pin To Net: NetName=NetD7_1 Pin=Q6-2
+Added Net: Name=NetD7_1
+Added Pin To Net: NetName=NetQ6_3 Pin=Q6-3
+Added Pin To Net: NetName=NetQ6_3 Pin=R12-1
+Added Net: Name=NetQ6_3
+Added Pin To Net: NetName=NetR3_1 Pin=R3-1
+Added Pin To Net: NetName=NetR3_1 Pin=R4-2
+Added Pin To Net: NetName=NetR3_1 Pin=SW2-2
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetR4_1 Pin=R4-1
+Added Pin To Net: NetName=NetR4_1 Pin=R8-2
+Added Pin To Net: NetName=NetR4_1 Pin=SW3-2
+Added Net: Name=NetR4_1
+Added Pin To Net: NetName=NetR8_1 Pin=R8-1
+Added Pin To Net: NetName=NetR8_1 Pin=R9-2
+Added Pin To Net: NetName=NetR8_1 Pin=SW4-2
+Added Net: Name=NetR8_1
+Added Pin To Net: NetName=NetR9_1 Pin=R9-1
+Added Pin To Net: NetName=NetR9_1 Pin=R15-2
+Added Pin To Net: NetName=NetR9_1 Pin=SW5-2
+Added Net: Name=NetR9_1
+Added Pin To Net: NetName=NetR15_1 Pin=R15-1
+Added Pin To Net: NetName=NetR15_1 Pin=R16-2
+Added Pin To Net: NetName=NetR15_1 Pin=SW6-2
+Added Net: Name=NetR15_1
+Added Pin To Net: NetName=NetR16_1 Pin=R16-1
+Added Pin To Net: NetName=NetR16_1 Pin=SW7-2
+Added Net: Name=NetR16_1
+Added Pin To Net: NetName=NetR21_2 Pin=R21-2
+Added Pin To Net: NetName=NetR21_2 Pin=U7-1
+Added Net: Name=NetR21_2
+Added Member To Class: ClassName=Sheet2 Member=Component D7 1N4007
+Added Member To Class: ClassName=Sheet2 Member=Component Q6 C1815
+Added Member To Class: ClassName=Sheet2 Member=Component U7 ARDUINO_NANO_A000005
+Added Room: Name=Sheet2

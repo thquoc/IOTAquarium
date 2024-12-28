@@ -1,0 +1,45 @@
+Removed Pin From Net: NetName=buzzer Pin=U7-20
+Added Pin To Net: NetName=buzzer Pin=U7-10
+Added Member To Class: ClassName=Sheet2 Member=Component C1 100uF/35V
+Added Member To Class: ClassName=Sheet2 Member=Component C2 100uF/35V
+Added Member To Class: ClassName=Sheet2 Member=Component C3 104
+Added Member To Class: ClassName=Sheet2 Member=Component C4 104
+Added Member To Class: ClassName=Sheet2 Member=Component C5 220uF/35V
+Added Member To Class: ClassName=Sheet2 Member=Component C6 0.1uF/35V
+Added Member To Class: ClassName=Sheet2 Member=Component C7 10uF/35V
+Added Member To Class: ClassName=Sheet2 Member=Component Cx1 33pF
+Added Member To Class: ClassName=Sheet2 Member=Component D1 1N4007
+Added Member To Class: ClassName=Sheet2 Member=Component D7 1N4007
+Added Member To Class: ClassName=Sheet2 Member=Component HD1 Header 4
+Added Member To Class: ClassName=Sheet2 Member=Component HD2 Header 4
+Added Member To Class: ClassName=Sheet2 Member=Component HD3 Header 3
+Added Member To Class: ClassName=Sheet2 Member=Component HD4 Header 3
+Added Member To Class: ClassName=Sheet2 Member=Component IC1 LM7805
+Added Member To Class: ClassName=Sheet2 Member=Component JDC1 Jac DC
+Added Member To Class: ClassName=Sheet2 Member=Component LED1 LED
+Added Member To Class: ClassName=Sheet2 Member=Component LS1 CCG-1206
+Added Member To Class: ClassName=Sheet2 Member=Component P1 Header 14
+Added Member To Class: ClassName=Sheet2 Member=Component Q6 C1815
+Added Member To Class: ClassName=Sheet2 Member=Component R1 330
+Added Member To Class: ClassName=Sheet2 Member=Component R2 2k
+Added Member To Class: ClassName=Sheet2 Member=Component R3 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R4 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R5 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R8 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R9 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R12 180R
+Added Member To Class: ClassName=Sheet2 Member=Component R15 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R16 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R21 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R22 2k
+Added Member To Class: ClassName=Sheet2 Member=Component SW1 SW
+Added Member To Class: ClassName=Sheet2 Member=Component SW2 SW
+Added Member To Class: ClassName=Sheet2 Member=Component SW3 SW
+Added Member To Class: ClassName=Sheet2 Member=Component SW4 SW
+Added Member To Class: ClassName=Sheet2 Member=Component SW5 SW
+Added Member To Class: ClassName=Sheet2 Member=Component SW6 SW
+Added Member To Class: ClassName=Sheet2 Member=Component SW7 SW
+Added Member To Class: ClassName=Sheet2 Member=Component U6 ESP32-DEVKIT-V1
+Added Member To Class: ClassName=Sheet2 Member=Component U7 ARDUINO_NANO_A000005
+Added Member To Class: ClassName=Sheet2 Member=Component VR1 LM1117T-3.3/NOPB
+Added Room: Name=Sheet2

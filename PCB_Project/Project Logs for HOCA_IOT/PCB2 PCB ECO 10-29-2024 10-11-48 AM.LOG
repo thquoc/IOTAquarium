@@ -1,0 +1,63 @@
+Removed Pin From Net: NetName=buzzer Pin=A1-8
+Removed Pin From Net: NetName=R_levelwater Pin=A1-9
+Removed Pin From Net: NetName=R_temp Pin=A1-10
+Removed Pin From Net: NetName=R_pH Pin=A1-11
+Removed Pin From Net: NetName=R_doduc Pin=A1-12
+Removed Pin From Net: NetName=R_oxi Pin=A1-13
+Removed Pin From Net: NetName=RX_arduino Pin=A1-19
+Removed Pin From Net: NetName=SR04-Digit1 Pin=A1-23
+Removed Pin From Net: NetName=SR04-Digit2 Pin=A1-25
+Removed Pin From Net: NetName=DS18B20_digital Pin=A1-27
+Removed Pin From Net: NetName=btn_oxi Pin=A1-29
+Removed Pin From Net: NetName=btn_pH Pin=A1-31
+Removed Pin From Net: NetName=btn_doduc Pin=A1-33
+Removed Pin From Net: NetName=btn_temp Pin=A1-35
+Removed Pin From Net: NetName=btn_levelwater Pin=A1-37
+Removed Pin From Net: NetName=btn_mode Pin=A1-39
+Removed Pin From Net: NetName=btn_rst Pin=A1-41
+Removed Pin From Net: NetName=Turbidity Analog Pin=A1-AD14
+Removed Pin From Net: NetName=pH4502C-Analog Pin=A1-AD15
+Removed Pin From Net: NetName=GND Pin=A1-GND4
+Removed Pin From Net: NetName=VCC Pin=A1-VIN
+Removed Pin From Net: NetName=TX_arduino Pin=R27-2
+Removed Pin From Net: NetName=GND Pin=R28-1
+Removed Pin From Net: NetName=TX_arduino Pin=R28-2
+Removed Member From Class: ClassName=Sheet2 Member=A1
+Removed Member From Class: ClassName=Sheet2 Member=R27
+Removed Member From Class: ClassName=Sheet2 Member=R28
+Added Component: Designator=Arduino Mega(ARDUINO MEGA)
+Added Component: Designator=R13(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R14(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=buzzer Pin=Arduino Mega-8
+Added Pin To Net: NetName=R_levelwater Pin=Arduino Mega-9
+Added Pin To Net: NetName=R_temp Pin=Arduino Mega-10
+Added Pin To Net: NetName=R_pH Pin=Arduino Mega-11
+Added Pin To Net: NetName=R_doduc Pin=Arduino Mega-12
+Added Pin To Net: NetName=R_oxi Pin=Arduino Mega-13
+Added Pin To Net: NetName=RX_arduino Pin=Arduino Mega-19
+Added Pin To Net: NetName=SR04-Digit1 Pin=Arduino Mega-23
+Added Pin To Net: NetName=SR04-Digit2 Pin=Arduino Mega-25
+Added Pin To Net: NetName=DS18B20_digital Pin=Arduino Mega-27
+Added Pin To Net: NetName=btn_oxi Pin=Arduino Mega-29
+Added Pin To Net: NetName=btn_pH Pin=Arduino Mega-31
+Added Pin To Net: NetName=btn_doduc Pin=Arduino Mega-33
+Added Pin To Net: NetName=btn_temp Pin=Arduino Mega-35
+Added Pin To Net: NetName=btn_levelwater Pin=Arduino Mega-37
+Added Pin To Net: NetName=btn_mode Pin=Arduino Mega-39
+Added Pin To Net: NetName=btn_rst Pin=Arduino Mega-41
+Added Pin To Net: NetName=VCC Pin=Arduino Mega-59
+Added Pin To Net: NetName=Turbidity Analog Pin=Arduino Mega-74
+Added Pin To Net: NetName=pH4502C-Analog Pin=Arduino Mega-75
+Added Pin To Net: NetName=GND Pin=Arduino Mega-79
+Added Pin To Net: NetName=TX_arduino Pin=R13-2
+Added Pin To Net: NetName=TX_arduino Pin=R14-1
+Added Pin To Net: NetName=GND Pin=R14-2
+Added Pin To Net: NetName=NetArduino Mega_18 Pin=Arduino Mega-18
+Added Pin To Net: NetName=NetArduino Mega_18 Pin=R13-1
+Added Net: Name=NetArduino Mega_18
+Added Member To Class: ClassName=Sheet2 Member=Component Arduino Mega
+Added Member To Class: ClassName=Sheet2 Member=Component R13 1k
+Added Member To Class: ClassName=Sheet2 Member=Component R14 2k
+Added Room: Name=Sheet2

@@ -1,0 +1,95 @@
+Net Status Report
+Filename     : D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc
+Date         : 10/29/2024
+Time         : 2:07:25 AM
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    3.3V, Signal Layers Only, 0mils
+    5V, Signal Layers Only, 0mils
+    CS, Signal Layers Only, 0mils
+    D/C, Signal Layers Only, 0mils
+    DS18B20_digital, Signal Layers Only, 0mils
+    GND, Signal Layers Only, 0mils
+    LED, Signal Layers Only, 0mils
+    Led canh bao, Signal Layers Only, 0mils
+    Led doduc, Signal Layers Only, 0mils
+    Led states, Signal Layers Only, 0mils
+    Led_oxi, Signal Layers Only, 0mils
+    Led_pH, Signal Layers Only, 0mils
+    Led_temp, Signal Layers Only, 0mils
+    Led_waterpump, Signal Layers Only, 0mils
+    MISO, Signal Layers Only, 0mils
+    MOSI, Signal Layers Only, 0mils
+    NetA1_18, Signal Layers Only, 0mils
+    NetC10_2, Signal Layers Only, 0mils
+    NetC11_2, Signal Layers Only, 0mils
+    NetC12_2, Signal Layers Only, 0mils
+    NetC8_2, Signal Layers Only, 0mils
+    NetC9_2, Signal Layers Only, 0mils
+    NetCx10_1, Signal Layers Only, 0mils
+    NetCx11_1, Signal Layers Only, 0mils
+    NetCx12_1, Signal Layers Only, 0mils
+    NetCx4_1, Signal Layers Only, 0mils
+    NetCx5_1, Signal Layers Only, 0mils
+    NetD1_1, Signal Layers Only, 0mils
+    NetHD10_1, Signal Layers Only, 0mils
+    NetHD11_1, Signal Layers Only, 0mils
+    NetHD12_1, Signal Layers Only, 0mils
+    NetHD13_1, Signal Layers Only, 0mils
+    NetHD14_1, Signal Layers Only, 0mils
+    NetHD15_1, Signal Layers Only, 0mils
+    NetHD16_1, Signal Layers Only, 0mils
+    NetHD19_1, Signal Layers Only, 0mils
+    NetHD19_2, Signal Layers Only, 0mils
+    NetHD20_1, Signal Layers Only, 0mils
+    NetHD20_2, Signal Layers Only, 0mils
+    NetHD23_1, Signal Layers Only, 0mils
+    NetHD23_2, Signal Layers Only, 0mils
+    NetHD8_1, Signal Layers Only, 0mils
+    NetHD8_2, Signal Layers Only, 0mils
+    NetHD9_1, Signal Layers Only, 0mils
+    NetHD9_2, Signal Layers Only, 0mils
+    NetLED1_1, Signal Layers Only, 0mils
+    NetLED2_1, Signal Layers Only, 0mils
+    NetLED3_1, Signal Layers Only, 0mils
+    NetLED4_1, Signal Layers Only, 0mils
+    NetLED5_1, Signal Layers Only, 0mils
+    NetLED6_1, Signal Layers Only, 0mils
+    NetR10_2, Signal Layers Only, 0mils
+    NetR11_2, Signal Layers Only, 0mils
+    NetR19_2, Signal Layers Only, 0mils
+    NetR20_2, Signal Layers Only, 0mils
+    NetR23_2, Signal Layers Only, 0mils
+    NetR24_2, Signal Layers Only, 0mils
+    NetR25_2, Signal Layers Only, 0mils
+    NetR26_2, Signal Layers Only, 0mils
+    NetR6_2, Signal Layers Only, 0mils
+    NetR7_2, Signal Layers Only, 0mils
+    RST, Signal Layers Only, 0mils
+    RX_arduino, Signal Layers Only, 0mils
+    R_doduc, Signal Layers Only, 0mils
+    R_levelwater, Signal Layers Only, 0mils
+    R_oxi, Signal Layers Only, 0mils
+    R_pH, Signal Layers Only, 0mils
+    R_temp, Signal Layers Only, 0mils
+    SCK, Signal Layers Only, 0mils
+    SR04-Digit1, Signal Layers Only, 0mils
+    SR04-Digit2, Signal Layers Only, 0mils
+    TX_arduino, Signal Layers Only, 0mils
+    T_CLK, Signal Layers Only, 0mils
+    T_CS, Signal Layers Only, 0mils
+    T_DIN, Signal Layers Only, 0mils
+    T_DO, Signal Layers Only, 0mils
+    T_IRQ, Signal Layers Only, 0mils
+    Turbidity Analog, Signal Layers Only, 0mils
+    VCC, Signal Layers Only, 0mils
+    btn_doduc, Signal Layers Only, 0mils
+    btn_levelwater, Signal Layers Only, 0mils
+    btn_mode, Signal Layers Only, 0mils
+    btn_oxi, Signal Layers Only, 0mils
+    btn_pH, Signal Layers Only, 0mils
+    btn_rst, Signal Layers Only, 0mils
+    btn_temp, Signal Layers Only, 0mils
+    pH4502C-Analog, Signal Layers Only, 0mils
+count : 87

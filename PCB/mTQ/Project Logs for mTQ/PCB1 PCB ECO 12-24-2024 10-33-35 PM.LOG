@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=5V Pin=C5-1
+Removed Pin From Net: NetName=GND Pin=C5-2
+Removed Pin From Net: NetName=5V Pin=LED1-2
+Removed Pin From Net: NetName=NetLED1_1 Pin=RL1-1
+Removed Member From Class: ClassName=Sheet1 Member=C5
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=LED1-2
+Added Pin To Net: NetName=NetLED1_1 Pin=R3-1
+Added Pin To Net: NetName=5V Pin=R3-2
+Added Pin To Net: NetName=5V Pin=RL1-1
+Added Member To Class: ClassName=Sheet1 Member=Component R3 330R
+Added Room: Name=Sheet1

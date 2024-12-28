@@ -1,0 +1,32 @@
+Removed Pin From Net: NetName=5V Pin=C1-1
+Removed Pin From Net: NetName=5V Pin=C3-2
+Removed Pin From Net: NetName=5V Pin=HD3-1
+Removed Pin From Net: NetName=5V Pin=HD4-1
+Removed Pin From Net: NetName=5V Pin=HD5-2
+Removed Pin From Net: NetName=5V Pin=HD6-2
+Removed Pin From Net: NetName=5V Pin=LED1-2
+Removed Pin From Net: NetName=5V Pin=R2-2
+Removed Pin From Net: NetName=5V Pin=U1-30
+Removed Pin From Net: NetName=5V Pin=VR1-3
+Added Component: Designator=C5(CP1.5/3.4)
+Add component (AddParameter): Name = "Description 1"; Value = "1000uF/6,3V - 470uF/16V - 330uF - 25V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 2"; Value = "220uF/35V - 100uF/50V - 63V - 4,7uF/200V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 3"; Value = "22uF => 33uF100V - 3,3uF => 4,7uF/250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 4"; Value = "2,2uF =>3,3uF/350 - 2,2uF/400V - 1uF/450V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100uF/35V/50V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V Pin=C5-2
+Change Net Name : Old Net Name=5V New Net Name=GND
+Added Pin To Net: NetName=NetLabel230 Pin=C1-1
+Added Pin To Net: NetName=NetLabel230 Pin=C3-2
+Added Pin To Net: NetName=NetLabel230 Pin=C5-1
+Added Pin To Net: NetName=NetLabel230 Pin=HD3-1
+Added Pin To Net: NetName=NetLabel230 Pin=HD4-1
+Added Pin To Net: NetName=NetLabel230 Pin=HD5-2
+Added Pin To Net: NetName=NetLabel230 Pin=HD6-2
+Added Pin To Net: NetName=NetLabel230 Pin=LED1-2
+Added Pin To Net: NetName=NetLabel230 Pin=R2-2
+Added Pin To Net: NetName=NetLabel230 Pin=U1-30
+Added Pin To Net: NetName=NetLabel230 Pin=VR1-3
+Added Net: Name=NetLabel230
+Added Member To Class: ClassName=Sheet1 Member=Component C5 100uF/35V
+Added Room: Name=Sheet1

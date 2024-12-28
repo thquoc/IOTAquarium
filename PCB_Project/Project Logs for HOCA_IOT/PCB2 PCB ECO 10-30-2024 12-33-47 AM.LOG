@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=DS18B20_digital Pin=Arduino Mega-45
+Removed Pin From Net: NetName=SR04-Digit2 Pin=Arduino Mega-49
+Added Pin To Net: NetName=SR04-Digit2 Pin=Arduino Mega-45
+Added Pin To Net: NetName=DS18B20_digital Pin=Arduino Mega-49

@@ -1,0 +1,734 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Net Status Report</title>
+</head>
+<body onload="document.getElementById('radio_mil').click()"><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Net Status Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/29/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2:07:25 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc" class="file"><acronym title="D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc">D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc</acronym></a></td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Units:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">
+<form><input type="radio" name="radio_units" id="radio_mm" onclick="changeUnits(this, 'mm')">mm<input type="radio" name="radio_units" id="radio_mil" onclick="changeUnits(this, 'mil')">mils</form>
+</td>
+</tr>
+</table><a name="IDI4YNGL0RG133KOLYENF12LZXXK1ZWWMLICXOSIFUH0LKYTTYOZOC"><table>
+<tr>
+<th class="column1">Nets</th>
+<th class="column2">Layer</th>
+<th class="column3">Length</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=12925.614mil|Location1.Y=5886.881mil|Location2.Y=9749mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=12925.614mil|Location1.Y=5886.881mil|Location2.Y=9749mil|Absolute=True">3.3V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=948.113mil|Location2.X=13279mil|Location1.Y=2685.11mil|Location2.Y=27154.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=948.113mil|Location2.X=13279mil|Location1.Y=2685.11mil|Location2.Y=27154.197mil|Absolute=True">5V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=7648.37mil|Location1.Y=6086.881mil|Location2.Y=26954.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=7648.37mil|Location1.Y=6086.881mil|Location2.Y=26954.197mil|Absolute=True">CS</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=7648.37mil|Location1.Y=6286.881mil|Location2.Y=26854.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=7648.37mil|Location1.Y=6286.881mil|Location2.Y=26854.197mil|Absolute=True">D/C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4354.5mil|Location2.X=10119.699mil|Location1.Y=1425.488mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4354.5mil|Location2.X=10119.699mil|Location1.Y=1425.488mil|Location2.Y=5936.262mil|Absolute=True">DS18B20_digital</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1219.386mil|Location2.X=17094mil|Location1.Y=2089.626mil|Location2.Y=27484mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1219.386mil|Location2.X=17094mil|Location1.Y=2089.626mil|Location2.Y=27484mil|Absolute=True">GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=7648.37mil|Location1.Y=6586.881mil|Location2.Y=26154.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=7648.37mil|Location1.Y=6586.881mil|Location2.Y=26154.197mil|Absolute=True">LED</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2842.976mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=3936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2842.976mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=3936.262mil|Absolute=True">Led canh bao</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3300.929mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4336.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3300.929mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4336.262mil|Absolute=True">Led doduc</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2957.465mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=3776.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2957.465mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=3776.262mil|Absolute=True">Led states</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.488mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4036.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.488mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4036.262mil|Absolute=True">Led_oxi</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.953mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4136.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.953mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4136.262mil|Absolute=True">Led_pH</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3415.417mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4236.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3415.417mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4236.262mil|Absolute=True">Led_temp</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3186.441mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4436.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3186.441mil|Location2.X=9819.699mil|Location1.Y=1812mil|Location2.Y=4436.262mil|Absolute=True">Led_waterpump</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6686.881mil|Location2.Y=26854.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6686.881mil|Location2.Y=26854.197mil|Absolute=True">MISO</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6386.881mil|Location2.Y=26954.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6386.881mil|Location2.Y=26954.197mil|Absolute=True">MOSI</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8175.272mil|Location2.X=9819.699mil|Location1.Y=153.488mil|Location2.Y=5236.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8175.272mil|Location2.X=9819.699mil|Location1.Y=153.488mil|Location2.Y=5236.262mil|Absolute=True">NetA1_18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=976.659mil|Location2.X=3135.745mil|Location1.Y=7130.334mil|Location2.Y=8058.297mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=976.659mil|Location2.X=3135.745mil|Location1.Y=7130.334mil|Location2.Y=8058.297mil|Absolute=True">NetC10_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.037mil|Location2.X=4165.916mil|Location1.Y=2089.626mil|Location2.Y=5042.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.037mil|Location2.X=4165.916mil|Location1.Y=2089.626mil|Location2.Y=5042.082mil|Absolute=True">NetC11_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1713.867mil|Location2.X=2926.367mil|Location1.Y=4401.771mil|Location2.Y=5273.444mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1713.867mil|Location2.X=2926.367mil|Location1.Y=4401.771mil|Location2.Y=5273.444mil|Absolute=True">NetC12_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=798.113mil|Location2.X=1812.654mil|Location1.Y=8984.941mil|Location2.Y=9778.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=798.113mil|Location2.X=1812.654mil|Location1.Y=8984.941mil|Location2.Y=9778.386mil|Absolute=True">NetC8_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=899.088mil|Location2.X=1773.958mil|Location1.Y=8079.004mil|Location2.Y=8837.86mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=899.088mil|Location2.X=1773.958mil|Location1.Y=8079.004mil|Location2.Y=8837.86mil|Absolute=True">NetC9_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1419.386mil|Location2.X=3242.745mil|Location1.Y=7345.056mil|Location2.Y=7934.582mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1419.386mil|Location2.X=3242.745mil|Location1.Y=7345.056mil|Location2.Y=7934.582mil|Absolute=True">NetCx10_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2471.037mil|Location2.X=3705.246mil|Location1.Y=2089.626mil|Location2.Y=3016.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2471.037mil|Location2.X=3705.246mil|Location1.Y=2089.626mil|Location2.Y=3016.208mil|Absolute=True">NetCx11_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49960.5mil|Location2.X=50136.5mil|Location1.Y=49945.5mil|Location2.Y=50053.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49960.5mil|Location2.X=50136.5mil|Location1.Y=49945.5mil|Location2.Y=50053.5mil|Absolute=True">NetCx12_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1434.82mil|Location2.X=1780.661mil|Location1.Y=9502.501mil|Location2.Y=9778.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1434.82mil|Location2.X=1780.661mil|Location1.Y=9502.501mil|Location2.Y=9778.386mil|Absolute=True">NetCx4_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1422.79mil|Location2.X=1739.512mil|Location1.Y=8345.117mil|Location2.Y=8837.86mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1422.79mil|Location2.X=1739.512mil|Location1.Y=8345.117mil|Location2.Y=8837.86mil|Absolute=True">NetCx5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5835.115mil|Location2.X=6733.654mil|Location1.Y=2657mil|Location2.Y=2806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5835.115mil|Location2.X=6733.654mil|Location1.Y=2657mil|Location2.Y=2806mil|Absolute=True">NetD1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2957.465mil|Location2.X=3707.5mil|Location1.Y=1012.902mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2957.465mil|Location2.X=3707.5mil|Location1.Y=1012.902mil|Location2.Y=2240mil|Absolute=True">NetHD10_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2770.5mil|Location2.X=3326.976mil|Location1.Y=1012.902mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2770.5mil|Location2.X=3326.976mil|Location1.Y=1012.902mil|Location2.Y=2240mil|Absolute=True">NetHD11_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.488mil|Location2.X=4075.917mil|Location1.Y=1461.5mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.488mil|Location2.X=4075.917mil|Location1.Y=1461.5mil|Location2.Y=2240mil|Absolute=True">NetHD12_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.953mil|Location2.X=4140.5mil|Location1.Y=1012.902mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.953mil|Location2.X=4140.5mil|Location1.Y=1012.902mil|Location2.Y=2240mil|Absolute=True">NetHD13_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3415.417mil|Location2.X=4140.5mil|Location1.Y=649.402mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3415.417mil|Location2.X=4140.5mil|Location1.Y=649.402mil|Location2.Y=2240mil|Absolute=True">NetHD14_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3203.5mil|Location2.X=3784.929mil|Location1.Y=649.402mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3203.5mil|Location2.X=3784.929mil|Location1.Y=649.402mil|Location2.Y=2240mil|Absolute=True">NetHD15_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2770.5mil|Location2.X=3670.441mil|Location1.Y=649.402mil|Location2.Y=2240mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2770.5mil|Location2.X=3670.441mil|Location1.Y=649.402mil|Location2.Y=2240mil|Absolute=True">NetHD16_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=217.938mil|Location2.X=4249.721mil|Location1.Y=7497.212mil|Location2.Y=8779.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=217.938mil|Location2.X=4249.721mil|Location1.Y=7497.212mil|Location2.Y=8779.797mil|Absolute=True">NetHD19_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=217.938mil|Location2.X=4249.721mil|Location1.Y=7412.535mil|Location2.Y=8579.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=217.938mil|Location2.X=4249.721mil|Location1.Y=7412.535mil|Location2.Y=8579.797mil|Absolute=True">NetHD19_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3540.79mil|Location1.Y=4814.082mil|Location2.Y=8334.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3540.79mil|Location1.Y=4814.082mil|Location2.Y=8334.322mil|Absolute=True">NetHD20_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3780.79mil|Location1.Y=5394.082mil|Location2.Y=8134.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3780.79mil|Location1.Y=5394.082mil|Location2.Y=8134.322mil|Absolute=True">NetHD20_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3412.916mil|Location1.Y=3386.208mil|Location2.Y=7792.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3412.916mil|Location1.Y=3386.208mil|Location2.Y=7792.57mil|Absolute=True">NetHD23_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3652.916mil|Location1.Y=3966.208mil|Location2.Y=7592.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=127.712mil|Location2.X=3652.916mil|Location1.Y=3966.208mil|Location2.Y=7592.57mil|Absolute=True">NetHD23_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=225.489mil|Location2.X=1298.185mil|Location1.Y=9336.972mil|Location2.Y=9714.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=225.489mil|Location2.X=1298.185mil|Location1.Y=9336.972mil|Location2.Y=9714.072mil|Absolute=True">NetHD8_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=225.489mil|Location2.X=718.185mil|Location1.Y=9248.121mil|Location2.Y=9847.923mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=225.489mil|Location2.X=718.185mil|Location1.Y=9248.121mil|Location2.Y=9847.923mil|Absolute=True">NetHD8_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=223.529mil|Location2.X=1231.999mil|Location1.Y=8199.31mil|Location2.Y=8655.016mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=223.529mil|Location2.X=1231.999mil|Location1.Y=8199.31mil|Location2.Y=8655.016mil|Absolute=True">NetHD9_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=223.529mil|Location2.X=651.999mil|Location1.Y=8103.465mil|Location2.Y=8795.862mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=223.529mil|Location2.X=651.999mil|Location1.Y=8103.465mil|Location2.Y=8795.862mil|Absolute=True">NetHD9_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5758.488mil|Location2.X=6427.638mil|Location1.Y=1266.907mil|Location2.Y=2183.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5758.488mil|Location2.X=6427.638mil|Location1.Y=1266.907mil|Location2.Y=2183.5mil|Absolute=True">NetLED1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1309.611mil|Location2.X=1448.272mil|Location1.Y=9012.392mil|Location2.Y=9290.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1309.611mil|Location2.X=1448.272mil|Location1.Y=9012.392mil|Location2.Y=9290.501mil|Absolute=True">NetLED2_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1261.974mil|Location2.X=1432.474mil|Location1.Y=7884.31mil|Location2.Y=8386.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1261.974mil|Location2.X=1432.474mil|Location1.Y=7884.31mil|Location2.Y=8386.668mil|Absolute=True">NetLED3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.466mil|Location2.X=1440.387mil|Location1.Y=7234.382mil|Location2.Y=7483.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1245.466mil|Location2.X=1440.387mil|Location1.Y=7234.382mil|Location2.Y=7483.056mil|Absolute=True">NetLED4_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49963mil|Location2.X=50133.5mil|Location1.Y=49945.5mil|Location2.Y=50053.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49963mil|Location2.X=50133.5mil|Location1.Y=49945.5mil|Location2.Y=50053.5mil|Absolute=True">NetLED5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49963mil|Location2.X=50133.5mil|Location1.Y=49945.5mil|Location2.Y=50053.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49963mil|Location2.X=50133.5mil|Location1.Y=49945.5mil|Location2.Y=50053.5mil|Absolute=True">NetLED6_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1380.272mil|Location2.X=1615.448mil|Location1.Y=9152.501mil|Location2.Y=9590.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1380.272mil|Location2.X=1615.448mil|Location1.Y=9152.501mil|Location2.Y=9590.501mil|Absolute=True">NetR10_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1364.474mil|Location2.X=1605.19mil|Location1.Y=7995.117mil|Location2.Y=8686.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1364.474mil|Location2.X=1605.19mil|Location1.Y=7995.117mil|Location2.Y=8686.668mil|Absolute=True">NetR11_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1272.387mil|Location2.X=1512.543mil|Location1.Y=7220.382mil|Location2.Y=7483.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1272.387mil|Location2.X=1512.543mil|Location1.Y=7220.382mil|Location2.Y=7483.056mil|Absolute=True">NetR19_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49965.5mil|Location2.X=50388.5mil|Location1.Y=49950.5mil|Location2.Y=50048.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49965.5mil|Location2.X=50388.5mil|Location1.Y=49950.5mil|Location2.Y=50048.5mil|Absolute=True">NetR20_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1372.387mil|Location2.X=1598.015mil|Location1.Y=7685.056mil|Location2.Y=7783.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1372.387mil|Location2.X=1598.015mil|Location1.Y=7685.056mil|Location2.Y=7783.056mil|Absolute=True">NetR23_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=50065.5mil|Location2.X=50388.5mil|Location1.Y=49960.5mil|Location2.Y=50348.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=50065.5mil|Location2.X=50388.5mil|Location1.Y=49960.5mil|Location2.Y=50348.5mil|Absolute=True">NetR24_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49965.5mil|Location2.X=50388.5mil|Location1.Y=49950.5mil|Location2.Y=50048.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=49965.5mil|Location2.X=50388.5mil|Location1.Y=49950.5mil|Location2.Y=50048.5mil|Absolute=True">NetR25_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=50065.5mil|Location2.X=50388.5mil|Location1.Y=49960.5mil|Location2.Y=50348.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=50065.5mil|Location2.X=50388.5mil|Location1.Y=49960.5mil|Location2.Y=50348.5mil|Absolute=True">NetR26_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1280.272mil|Location2.X=1594.855mil|Location1.Y=9015.198mil|Location2.Y=9290.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1280.272mil|Location2.X=1594.855mil|Location1.Y=9015.198mil|Location2.Y=9290.501mil|Absolute=True">NetR6_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1264.474mil|Location2.X=1533.112mil|Location1.Y=7855.31mil|Location2.Y=8386.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1264.474mil|Location2.X=1533.112mil|Location1.Y=7855.31mil|Location2.Y=8386.668mil|Absolute=True">NetR7_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6186.881mil|Location2.Y=25754.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6186.881mil|Location2.Y=25754.197mil|Absolute=True">RST</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5500.803mil|Location2.X=9819.699mil|Location1.Y=3751.63mil|Location2.Y=5336.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5500.803mil|Location2.X=9819.699mil|Location1.Y=3751.63mil|Location2.Y=5336.262mil|Absolute=True">RX_arduino</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1361.974mil|Location2.X=13980.732mil|Location1.Y=7884.31mil|Location2.Y=26040.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1361.974mil|Location2.X=13980.732mil|Location1.Y=7884.31mil|Location2.Y=26040.732mil|Absolute=True">R_doduc</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1285mil|Location2.X=9819.699mil|Location1.Y=944.86mil|Location2.Y=3676.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1285mil|Location2.X=9819.699mil|Location1.Y=944.86mil|Location2.Y=3676.262mil|Absolute=True">R_levelwater</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1409.611mil|Location2.X=13980.732mil|Location1.Y=9012.392mil|Location2.Y=26140.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1409.611mil|Location2.X=13980.732mil|Location1.Y=9012.392mil|Location2.Y=26140.732mil|Absolute=True">R_oxi</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1345.466mil|Location2.X=13980.732mil|Location1.Y=7234.382mil|Location2.Y=25940.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1345.466mil|Location2.X=13980.732mil|Location1.Y=7234.382mil|Location2.Y=25940.732mil|Absolute=True">R_pH</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1478mil|Location2.X=9819.699mil|Location1.Y=944.86mil|Location2.Y=3576.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1478mil|Location2.X=9819.699mil|Location1.Y=944.86mil|Location2.Y=3576.262mil|Absolute=True">R_temp</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6486.881mil|Location2.Y=26754.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6486.881mil|Location2.Y=26754.197mil|Absolute=True">SCK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4554.5mil|Location2.X=9919.699mil|Location1.Y=1561.5mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4554.5mil|Location2.X=9919.699mil|Location1.Y=1561.5mil|Location2.Y=5936.262mil|Absolute=True">SR04-Digit1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4354.438mil|Location2.X=10019.699mil|Location1.Y=1561.438mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4354.438mil|Location2.X=10019.699mil|Location1.Y=1561.438mil|Location2.Y=5936.262mil|Absolute=True">SR04-Digit2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5400.803mil|Location2.X=7903.272mil|Location1.Y=47.488mil|Location2.Y=3838.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5400.803mil|Location2.X=7903.272mil|Location1.Y=47.488mil|Location2.Y=3838.37mil|Absolute=True">TX_arduino</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6786.881mil|Location2.Y=26454.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6786.881mil|Location2.Y=26454.197mil|Absolute=True">T_CLK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6886.881mil|Location2.Y=26354.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6886.881mil|Location2.Y=26354.197mil|Absolute=True">T_CS</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6986.881mil|Location2.Y=26254.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=6986.881mil|Location2.Y=26254.197mil|Absolute=True">T_DIN</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=7086.881mil|Location2.Y=25954.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=7086.881mil|Location2.Y=25954.197mil|Absolute=True">T_DO</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=7186.881mil|Location2.Y=25854.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=727.974mil|Location2.X=8648.37mil|Location1.Y=7186.881mil|Location2.Y=25854.197mil|Absolute=True">T_IRQ</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5187.5mil|Location2.X=11719.699mil|Location1.Y=1234.5mil|Location2.Y=5626.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5187.5mil|Location2.X=11719.699mil|Location1.Y=1234.5mil|Location2.Y=5626.262mil|Absolute=True">Turbidity Analog</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5923.988mil|Location2.X=11719.699mil|Location1.Y=1910mil|Location2.Y=3936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5923.988mil|Location2.X=11719.699mil|Location1.Y=1910mil|Location2.Y=3936.262mil|Absolute=True">VCC</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2689.5mil|Location2.X=10419.699mil|Location1.Y=3640mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2689.5mil|Location2.X=10419.699mil|Location1.Y=3640mil|Location2.Y=5936.262mil|Absolute=True">btn_doduc</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3375.5mil|Location2.X=10619.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3375.5mil|Location2.X=10619.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True">btn_levelwater</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2947.5mil|Location2.X=10719.699mil|Location1.Y=3640mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2947.5mil|Location2.X=10719.699mil|Location1.Y=3640mil|Location2.Y=5936.262mil|Absolute=True">btn_mode</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2680.524mil|Location2.X=10219.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2680.524mil|Location2.X=10219.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True">btn_oxi</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3113.524mil|Location2.X=10319.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3113.524mil|Location2.X=10319.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True">btn_pH</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.5mil|Location2.X=10819.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.5mil|Location2.X=10819.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True">btn_rst</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3054.5mil|Location2.X=10519.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3054.5mil|Location2.X=10519.699mil|Location1.Y=3635mil|Location2.Y=5936.262mil|Absolute=True">btn_temp</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4154.107mil|Location2.X=11719.699mil|Location1.Y=1234.107mil|Location2.Y=5726.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\VKU\DACN2\PCB\PCB_Project\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4154.107mil|Location2.X=11719.699mil|Location1.Y=1234.107mil|Location2.Y=5726.262mil|Absolute=True">pH4502C-Analog</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

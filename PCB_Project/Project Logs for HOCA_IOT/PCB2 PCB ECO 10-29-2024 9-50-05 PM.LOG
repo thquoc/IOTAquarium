@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=R_oxi Pin=Arduino Mega-23
+Removed Pin From Net: NetName=buzzer Pin=Arduino Mega-33
+Added Pin To Net: NetName=buzzer Pin=Arduino Mega-23
+Added Pin To Net: NetName=R_oxi Pin=Arduino Mega-33

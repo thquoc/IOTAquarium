@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Định nghĩa màu sắc cho ứng dụng -->
+    <color name="colorPrimary">#6200EE</color>  <!-- Màu chủ đạo của ứng dụng -->
+    <color name="colorPrimaryDark">#3700B3</color>  <!-- Màu tối cho thanh trạng thái -->
+    <color name="colorAccent">#03DAC5</color>  <!-- Màu làm nổi bật -->
+</resources>

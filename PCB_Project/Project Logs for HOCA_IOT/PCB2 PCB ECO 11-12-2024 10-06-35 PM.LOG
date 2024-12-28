@@ -1,0 +1,7 @@
+Added Pin To Net: NetName=SR04-echo Pin=HD1-3
+Added Pin To Net: NetName=SR04-echo Pin=U7-14
+Added Net: Name=SR04-echo
+Added Pin To Net: NetName=SR04-trip Pin=HD1-2
+Added Pin To Net: NetName=SR04-trip Pin=U7-13
+Added Net: Name=SR04-trip
+Added Room: Name=Sheet2

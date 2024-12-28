@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=U7-29
+Added Member To Class: ClassName=Sheet2 Member=Component D1 1N4007
+Added Member To Class: ClassName=Sheet2 Member=Component LED1 LED
+Added Member To Class: ClassName=Sheet2 Member=Component RL4 Relay 10A/5V
+Added Member To Class: ClassName=Sheet2 Member=Component U7 ARDUINO_NANO_A000005
+Added Room: Name=Sheet2
